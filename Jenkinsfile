@@ -23,7 +23,7 @@ pipeline {
                 sh '''
                 cd myapp
                 python3 hello.py
-                python3 hello.py --name=SudheeshR_main_branch
+                python3 hello.py --name=SudheeshR_main
                 '''
             }
         }
