@@ -6,9 +6,6 @@ pipeline {
     }
     stages {
         stage('Build') {
-            when {
-                changeset 'master'
-            }
             steps {
                 echo "Building.."
                 sh '''
@@ -18,9 +15,6 @@ pipeline {
             }
         }
         stage('Test') {
-            when {
-                changeset 'master'
-            }
             steps {
                 echo "Testing.."
                 sh '''
@@ -31,9 +25,6 @@ pipeline {
             }
         }
         stage('Deploy') {
-            when {
-                changeset 'master'
-            }
             steps {
                 echo 'Deploying....'
                 sh '''
@@ -41,5 +32,8 @@ pipeline {
                 '''
             }
         }
+    }
+    when {
+        changeset 'master'
     }
 }
