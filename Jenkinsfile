@@ -5,9 +5,8 @@ pipeline {
             }
       }
     triggers {
-        scm('**') {
-            branches('master')
-        }
+        scm('**')
+        branches('master')
     }
     stages {
         stage('Build') {
