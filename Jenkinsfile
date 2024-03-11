@@ -5,9 +5,7 @@ pipeline {
             }
       }
     triggers {
-        scm('**') {  // Monitor all branches for changes
-            branches('master')  // Only trigger for commits to the 'dev' branch
-        }
+        pollSCM '* * * * *'
     }
     stages {
         stage('Build') {
