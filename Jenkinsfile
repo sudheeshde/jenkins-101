@@ -23,13 +23,13 @@ pipeline {
                 sh '''
                 cd myapp
                 python3 hello.py
-                python3 hello.py --name=Sudheesh
+                python3 hello.py --name=Sudheesh_R
                 '''
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploy....'
+                echo 'Deploying....'
                 sh '''
                 echo "deploying stuff.."
                 '''
