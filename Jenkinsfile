@@ -3,6 +3,11 @@ pipeline {
         node {
             label 'docker-agent-python'
             }
+      }
+    triggers {
+        scm('**') {  // Monitor all branches for changes
+            branches('master')  // Only trigger for commits to the 'dev' branch
+        }
     }
     stages {
         stage('Build') {
@@ -32,8 +37,5 @@ pipeline {
                 '''
             }
         }
-    }
-    when {
-        changeset 'master'
     }
 }
